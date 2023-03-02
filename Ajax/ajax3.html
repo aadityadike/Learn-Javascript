@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .users {
+        display: flex;
+        background: #176d7c;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Get Users</button>
+    <div id="users"></div>
+    <script>
+      document.getElementById("button").addEventListener("click", loadUsers);
+
+      function loadUsers() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.github.com/users", true);
+
+        xhr.onload = function () {
+          if (this.status == 200) {
+            let users = JSON.parse(this.responseText);
+
+            let output = "";
+
+            for (let i in users) {
+              output += `<div class="users"><ul>
+                    <li>${users[i].login}</li>
+                    <li>${users[i].id}</li>
+                    <img src=${users[i].avatar_url} width=70</ul></div>`;
+            }
+            document.body.innerHTML = output;
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Aditya",
+        "subject": "Computer science"
+    },
+    {
+        "id": 2,
+        "name": "Om",
+        "subject": "Charted Accountant"
+    },
+    {
+        "id": 3,
+        "name": "Sahil",
+        "subject": "Business Management"
+    },
+    {
+        "id": 4,
+        "name": "Siddhesh",
+        "subject": "Banking"
+    }
+]

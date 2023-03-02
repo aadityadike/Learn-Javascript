@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 235, 235);
+        line-height: 1.5rem;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+      #box {
+        background: #333;
+        color: white;
+        margin-top: 1rem;
+        width: 500px;
+        height: 90px;
+        padding: 40px;
+        text-align: center;
+      }
+      #box2 {
+        position: relative;
+        background: rgb(3, 40, 75);
+        color: #ffffff;
+        margin: 1rem 0 1rem 0;
+        width: 100px;
+        height: 90px;
+        padding: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Jquery Crash Course | Effects & Animation</h2>
+    </header>
+    <div id="container">
+      <button id="btnFadeOut">Fade Out</button>
+      <button id="btnFadeIn">Fade In</button>
+      <button id="btnFadeTog">Fade Toggle</button>
+      <hr />
+
+      <button id="btnSlideUp">Slide Up</button>
+      <button id="btnSlideDown">Slide Down</button>
+      <button id="btnSlideToggle">Slide Toggle</button>
+      <button id="stop">Stop</button>
+
+      <hr />
+      <div id="box"><h1>hello world</h1></div>
+      <div id="box2"><h1>cool</h1></div>
+
+      <button id="btnMoveRight">Move Right</button>
+      <button id="btnMoveLeft">Move Left</button>
+      <button id="btnMoveAround">Move Around</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // This is for Fading in and out.
+        $("#btnFadeOut").click(function () {
+          $("#box").fadeOut(2000, function () {
+            $("#btnFadeOut").text("Its Gone");
+          });
+        });
+
+        $("#btnFadeIn").click(function () {
+          $("#box").fadeIn(2000, function () {
+            $("#btnFadeIn").text("It comes back");
+          });
+        });
+
+        $("#btnFadeTog").click(function () {
+          $("#box").fadeToggle(1000);
+        });
+
+        // Slide Section
+        $("#btnSlideUp").click(function () {
+          $("#box").slideUp(1000);
+        });
+
+        $("#btnSlideDown").click(function () {
+          $("#box").slideDown(1000);
+        });
+
+        $("#btnSlideToggle").click(function () {
+          $("#box").slideToggle(3000);
+        });
+
+        $("#stop").click(function () {
+          $("#box").stop();
+        });
+
+        // Animation Section
+        $("#btnMoveRight").click(function () {
+          $("#box2").animate({
+            left: 100,
+            width: "100px",
+            height: "100px",
+            opacity: 0.5,
+          });
+        });
+
+        $("#btnMoveLeft").click(function () {
+          $("#box2").animate({ left: 0 });
+        });
+
+        $("#btnMoveAround").click(function () {
+          let box = $("#box2");
+          box.animate({
+            left: 100,
+          });
+          box.animate({
+            top: 100,
+          });
+          box.animate({
+            top: 100,
+            left: 0,
+          });
+          box.animate({
+            top: 0,
+            left: 0,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

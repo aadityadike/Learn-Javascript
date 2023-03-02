@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 235, 235);
+        line-height: 1.5rem;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Jquery Crash Course | AJAX</h2>
+    </header>
+    <div id="container">
+      <div id="result">
+        <ul id="users"></ul>
+
+        <form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+          <input type="text" id="title" placeholder="Title" />
+          <textarea placeholder="Body" id="body"></textarea>
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#result").load("test.html", function (responseTxt, statusTxt, xhr) {
+          if (statusTxt == "success") {
+            alert("it went fine");
+          } else if (statusTxt == "error") {
+            alert("error:" + xhr.statusText);
+          }
+        });
+
+        /*
+
+        $.get("test.html", function (data) {
+          $("#result").html(data);
+        });
+
+
+        $.getJSON("users.json", function (data) {
+          $.each(data, function (i, users) {
+            $("ul#users").append(
+              "<li>" + users.firstName + " " + users.lastName + "</li>"
+              );
+            });
+          });
+
+          // Get request.
+
+          $.ajax({
+            method: "GET",
+            url: "https://jsonplaceholder.typicode.com/posts",
+            dataType: "JSON",
+          }).done(function (data) {
+          $.map(data, function (post, i) {
+            $("#result").append(
+              "<h3>" + post.title + "</h3><p>" + post.body + "</p>"
+              );
+            });
+          });
+          
+          // post request.
+          $("#postForm").submit(function (e) {
+            e.preventDefault();
+            
+            var title = $("#title").val();
+            var body = $("#body").val();
+            var url = $(this).attr("action");
+            
+            $.post(url, { title: title, body: body }).done(function (data) {
+              console.log("post saved");
+              console.log(data);
+            });
+          });
+        */
+      });
+    </script>
+  </body>
+</html>

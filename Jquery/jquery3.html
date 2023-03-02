@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 235, 235);
+        line-height: 1.5rem;
+      }
+      ul {
+        list-style: none;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+      .apple {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 0.4rem;
+      }
+
+      #input-li {
+        margin-top: 1rem;
+        width: 200px;
+        height: 4vh;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Jquery Crash Course | DOM Manipulation</h2>
+    </header>
+    <div id="container">
+      <p id="para1">
+        Hello Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Accusantium ducimus libero quam inventore, harum sunt nobis repellendus
+        autem consectetur voluptas beatae, rem distinctio. Soluta debitis
+        incidunt esse inventore dicta magni.
+      </p>
+      <button id="btn1">Click here</button>
+      <p id="para2">
+        Bye Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Accusantium ducimus libero quam inventore, harum sunt nobis repellendus
+        autem consectetur voluptas beatae, rem distinctio. Soluta debitis
+        incidunt esse inventore dicta magni.
+      </p>
+      <button id="btn1">Click here</button>
+      <div id="text">
+        <ul id="list1">
+          <li>Hi</li>
+          <li>Hello</li>
+          <li>Bye</li>
+          <li>How are you?</li>
+          <li>Please help me!</li>
+        </ul>
+      </div>
+      <input type="text" id="input-li" />
+      <ul class="users"></ul>
+
+      <a href="https://www.google.com/">Google</a>
+    </div>
+    <script>
+      $("#container").css({
+        display: "flex",
+        "flex-direction": "column",
+      });
+      $("button").css({
+        width: "100px",
+        background: "#333",
+        color: "white",
+        "border-radius": ".5rem",
+        height: "6vh",
+      });
+
+      /*
+      $("#para2").addClass("apple");
+      // this will remove class name.
+      $("#para2").removeClass("apple");
+      
+      
+      $("#btn1").click(function () {
+        $("#para1").toggleClass("apple");
+      });
+      
+      
+      // $("#text").text("Hello");
+      $("#text").html("<i> Hello </i>");
+      // This will get whatever value in #text.
+      alert($("#text").text());
+      
+      
+      $("ul").css("list-style", "none").append("Append list item");
+
+      $("ul").css("list-style", "none").prepend("Prepend list item");
+      
+      // This will merge two paragraphs.
+      // $("#para1").prependTo("#para2");
+      // $("#para1").appendTo("#para2");
+      
+      // you can also use before.
+      $("ul").after("<h1>hello</h1>");
+      
+      // This will remove what ul contains.
+      $("ul").empty();
+      // This will remove ul.
+      $("ul").detach();
+      // adding attribute.
+      $("a").attr("target", "_blank");
+      // alert($("a").attr("href"));
+      
+      
+      $("p").wrap("<i>");
+        // $("p").wrapAll("<b>");
+          // Important
+          $("#input-li").keyup(function (e) {
+            const value = e.which;
+            if (value == 13) {
+              e.preventDefault();
+              $("ul").append("<li>" + e.target.value + "</li>");
+            }
+          });
+        */
+
+      // Array section. Important.
+      let myArr = ["aditya", "sahil", "om", "siddhesh", "shubham"];
+
+      $.each(myArr, function (i, val) {
+        $(".users").append("<li>" + i + " -> " + val + "</li>");
+      });
+
+      const list = $("ul#list1 li").toArray();
+      $.each(list, function (i, val) {
+        //   console.log(val.innerHTML);
+      });
+    </script>
+  </body>
+</html>

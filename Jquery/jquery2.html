@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script>
+      $(document).ready(function () {
+        $("#btn2").click(function () {
+          alert("you clicked");
+        });
+      });
+    </script> -->
+    <style>
+      button {
+        border-style: none;
+        background-color: #333;
+        color: white;
+        border-radius: 0.4rem;
+        width: 89px;
+        height: 40px;
+        margin-right: 1rem;
+      }
+      body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 235, 235);
+        line-height: 1.5rem;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Jquery Crash Course | Events</h2>
+    </header>
+    <div id="container">
+      <h1>Mouse Events</h1>
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p id="para1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit,
+        veritatis. Nemo cupiditate libero obcaecati ipsum perspiciatis tempora
+        sit nihil ab ipsa voluptatem ducimus, dolorem facilis molestiae sed
+        aliquam maiores quaerat.
+      </p>
+      <h1 class="coords"></h1>
+      <hr />
+      <!-- This is a Form -->
+      <form>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" placeholder="name" />
+        <br />
+        <label for="email">Email</label><br />
+        <input type="email" id="email" placeholder="email" />
+        <br />
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="male">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <script>
+      /*
+        $("#btn1").click(function () {
+          alert("button clicked");
+        });
+
+        $("#btn2").on("click", function () {
+          alert("button clicked");
+        });
+        $("#btn1").click(function () {
+          $("#para1").hide();
+        });
+        $("#btn2").click(function () {
+          $("#para1").show();
+        });
+
+        // you can also use various mouse event.
+        $("#btn1").hover(function () {
+          $("#para1").toggle();
+        });
+
+
+        $("#btn2").click(function (e) {
+          // console.log(e);
+          // alert(e.target.id);
+          alert(e.target.outerHTML);
+        });
+
+        $(document).on("mousemove", function (e) {
+          console.log("coords:Y:" + e.clientY + " X:" + e.clientX);
+        });
+
+        $(document).on("mouseover", function (e) {
+          $(".coords").html("coords:Y:" + e.clientY + " X:" + e.clientX);
+        });
+        
+        // This event will happen when you focus on the input.
+        $("input").focus(function () {
+          // alert("this is focus");
+          $(this).css("background", "magenta");
+        });
+        
+        // This event will happen when you don't focus on the input.
+        $("input").blur(function () {
+          // alert("this is focus");
+        $(this).css("background", "lightblue");
+      });
+
+      $("input").keyup(function (e) {
+        console.log(e.target.value);
+      });
+      
+      */
+
+      $("select#gender").change(function (e) {
+        alert("change");
+        console.log(e.target.value);
+      });
+
+
+      $("form").submit(function (e) {
+        e.preventDefault();
+        console.log("submited");
+        let name = $("input#name").val();
+        console.log(name);
+      });
+    </script>
+  </body>
+</html>

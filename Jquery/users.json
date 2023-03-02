@@ -1,0 +1,27 @@
+[
+  {
+    "firstName": "Aditya",
+    "lastName": "Dike",
+    "subject": "computer science"
+  },
+  {
+    "firstName": "Shubham",
+    "lastName": "kadam",
+    "subject": "computer science"
+  },
+  {
+    "firstName": "Sahil",
+    "lastName": "shinde",
+    "subject": "Finance"
+  },
+  {
+    "firstName": "siddhesh",
+    "lastName": "potle",
+    "subject": "banking"
+  },
+  {
+    "firstName": "om",
+    "lastName": "sawant",
+    "subject": "Accountant"
+  }
+]

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 235, 235);
+        line-height: 1.5rem;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Jquery Crash Course | Selectors</h2>
+    </header>
+    <div id="container">
+      <h1 id="heading1">Heading One</h1>
+      <p id="para1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam tenetur
+        vero similique voluptatum eligendi! Aliquam vel tempora voluptatem,
+        fugiat aperiam quas fuga, quod voluptatibus iusto commodi iure eveniet
+        possimus similique.
+      </p>
+
+      <h1 class="heading2">Heading Two</h1>
+      <p class="para2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam tenetur
+        vero similique voluptatum eligendi! Aliquam vel tempora voluptatem,
+        <span>Lorem ipsum dolor sit.</span>
+        fugiat aperiam quas fuga, quod voluptatibus iusto commodi iure eveniet
+        possimus similique.
+      </p>
+      <ul id="list">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+      </ul>
+
+      <input type="button" value="button1" />
+      <input type="submit" value="button2" />
+      <input type="text" />
+
+      <a href="https://www.google.com">google</a>
+      <a href="http://www.yahoo.com">yahoo</a>
+    </div>
+    <script>
+      // Hide properties
+      // $("#heading1").hide();
+      // $("h1.heading2").hide();
+
+      /* -------------------------------------- */
+
+      // Css properties
+      $("p span").css("background-color", "steelblue");
+      $("#list").css("list-style", "none");
+      $("#list li:first").css("background-color", "orange");
+      $("#list li:even").css("background-color", "orange"); // you can also use odd.
+      $("#list li:nth-child(3n)").css("background-color", "lightblue");
+      /* -------------------------------------- */
+      $(":button").hide();
+      // $('*').hide();
+      /* -------------------------------------- */
+
+      $("[href]").css("text-decoration", "none").css("color", "red");
+
+      $('a[href="https://www.google.com"]').css("color", "green");
+    </script>
+  </body>
+</html>
