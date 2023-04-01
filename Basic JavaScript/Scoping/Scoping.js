@@ -1,3 +1,5 @@
+// import { moduleVar } from "./modules.js";
+
 /* Global Scoping.*/
 console.log(globalVar);
 
