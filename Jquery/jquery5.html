@@ -49,19 +49,19 @@
     </div>
     <script>
       $(document).ready(function () {
-        $("#result").load("test.html", function (responseTxt, statusTxt, xhr) {
-          if (statusTxt == "success") {
-            alert("it went fine");
-          } else if (statusTxt == "error") {
-            alert("error:" + xhr.statusText);
-          }
-        });
 
-        /*
+        // $("#result").load("test.html", function (responseTxt, statusTxt, xhr) {
+        //   if (statusTxt == "success") {
+        //     alert("it went fine");
+        //   } else if (statusTxt == "error") {
+        //     alert("error:" + xhr.statusText);
+        //   }
+        // });
 
-        $.get("test.html", function (data) {
-          $("#result").html(data);
-        });
+      
+        // $.get("test.html", function (data) {
+        //   $("#result").html(data);
+        // });
 
 
         $.getJSON("users.json", function (data) {
@@ -72,8 +72,8 @@
             });
           });
 
-          // Get request.
 
+          // Get request.
           $.ajax({
             method: "GET",
             url: "https://jsonplaceholder.typicode.com/posts",
@@ -86,6 +86,7 @@
             });
           });
           
+
           // post request.
           $("#postForm").submit(function (e) {
             e.preventDefault();
@@ -98,8 +99,7 @@
               console.log("post saved");
               console.log(data);
             });
-          });
-        */
+          });        
       });
     </script>
   </body>
